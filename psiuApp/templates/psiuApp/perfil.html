@@ -1,0 +1,57 @@
+{% extends 'psiuApp/base.html' %}
+{% load static %} 
+
+{% block content %}
+
+<div class="container text-center">
+    <br>
+    <i class="fa fa-user-circle fa-5x" aria-hidden="true"></i>
+    <h4 class="text-center lh-sm">Atividades de {{ perfil.username }}</h4>
+</div>
+
+<div class="ml-3">
+    <h4><b>Dados de contato:</b></h4>
+    <div class="ml-4">
+        <p><b>Nome:</b> {{ user.first_name }} {{ user.last_name }}<br><b>Email:</b> {{ user.email }}</p>
+    </div>
+</div>
+
+<br>
+<br>
+
+<div class="ml-3">
+    <h4><b>Atividades criadas por {{user.username}}:</b></h4>
+    <br>
+    <div class="container text-center">
+        <div class="row justify-content-center">
+            {% for atividade in atividades_criadas %}
+                <div class="col-auto">
+                    {% include 'psiuApp/cards_personalizados.html' %}
+                </div>
+            {% empty %}
+                <h6>Usuário não criou atividades.</h6>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<br>
+<br>
+
+<div class="ml-3">
+    <h4><b>Atividades que {{user.username}} participa:</b></h4>
+    <br>
+    <div class="container text-center">
+        <div class="row justify-content-center">
+            {% for atividade in atividades_participa %}
+                <div class="col-auto">
+                    {% include 'psiuApp/cards_personalizados.html' %}
+                </div>
+            {% empty %}
+                <h6>Usuário não participa de atividades.</h6>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,5 +1,5 @@
 """
-URL configuration for psiu_frontend project.
+URL configuration for psiu2 project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.1/topics/http/urls/
@@ -15,8 +15,9 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls.conf import include, path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path("", include('psiuApp.urls')),
 ]
