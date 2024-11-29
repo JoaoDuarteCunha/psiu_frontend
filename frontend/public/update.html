@@ -1,0 +1,30 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width">
+    <title>Atualização</title> 
+    <script src="javascript/update.js"></script> 
+    <script src="javascript/constantes.js"></script> 
+</head>
+
+<body> 
+    <iframe src="cabecalho.html" frameborder="0" width="100%" height="50" id="cabecalho"></iframe> 
+    <h1>Atualizando o Carro #<span id='id'></span></h1> 
+    <form id="meuFormulario"> 
+      <input type="hidden" name="id" id="id"> 
+      <table> 
+        <tbody> 
+
+            <tr><td align="right">adicionais:</td><td><input type="text" name="adicionais" id="adicionais"></td></tr> 
+            <tr><td align="right">data:</td><td><input type="text" name="data" id="data"></td>
+            <tr><td align="right">local_saida:</td><td><input type="text" name="local_saida" id="local_saida"></td>
+            <tr><td align="right">hora:</td><td><input type="text" name="hora" id="hora"></td>
+
+        </tbody> 
+      </table> 
+      <button id="atualiza" name="atualiza" value="Atualiza">Atualiza</button> 
+    </form> 
+    <div id="mensagem"></div> 
+  </body> 
+  </html> 
