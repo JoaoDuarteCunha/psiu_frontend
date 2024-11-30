@@ -1,13 +1,13 @@
-function exibeListaDeCarros(tipo_atividade: string) {
+function exibeListaDeAtividades(tipo_atividade: string) {
     fetch(backendAddress + "psiuApiApp/lista/" + tipo_atividade + "/") 
     .then(response => response.json()) 
-    .then(carros => { 
+    .then(atividades => { 
         
-        if (carros.length > 0) {
+        if (atividades.length > 0) {
             let container_cards = document.getElementById('container_cards') as HTMLDivElement;
             container_cards.innerHTML = ""
 
-            for (let carro of carros) { 
+            for (let atividade of atividades) { 
                 
                 const formatacao = document.createElement('div') as HTMLDivElement;
                 formatacao.className = 'col-auto';
@@ -20,9 +20,35 @@ function exibeListaDeCarros(tipo_atividade: string) {
                 
                 const titulo = document.createElement('h5');
                 titulo.className = 'card-title';
-                titulo.textContent = 'Destino: ' + carro['data'];
+                titulo.textContent = campos[tipo_atividade][0][1] + ': ' + atividade[campos[tipo_atividade][0][0]];
                 
+                const subtitulo = document.createElement('h6');
+                subtitulo.className = 'card-subtitle mb-2 text-muted';
+                subtitulo.textContent = campos[tipo_atividade][1][1] + ': ' + atividade[campos[tipo_atividade][1][0]];
+                
+                //DATA
+                const data = document.createElement('h6');
+                data.className = 'card-subtitle mb-2 text-muted';
+                let [ano, mes, dia] = atividade['data'].split('-');
+                let data_formatada = `${dia}/${mes}/${ano}`;
+                data.textContent = 'Data: ' + data_formatada;
+                
+                //HORA
+                const hora = document.createElement('h6');
+                hora.className = 'card-subtitle mb-2 text-muted';
+                hora.textContent = 'Horário: ' + atividade['hora'].substr(0, 5) + 'h';
+                
+                const botao = document.createElement('a');
+                botao.className = 'btn btn-primary';
+                botao.setAttribute('href', 'atividade.html?id_atividade=' + atividade['id'])
+                botao.innerHTML = 'Mais informações'
+
                 corpo_carta.appendChild(titulo)
+                corpo_carta.appendChild(subtitulo)
+                corpo_carta.appendChild(data)
+                corpo_carta.appendChild(hora)
+                corpo_carta.appendChild(botao)
+
                 borda_carta.appendChild(corpo_carta)
                 formatacao.appendChild(borda_carta)
 
@@ -61,5 +87,5 @@ onload = function () {
         window.location.pathname = '/index.html'
     }
 
-    exibeListaDeCarros(tipo_atividade);
+    exibeListaDeAtividades(tipo_atividade);
 } 

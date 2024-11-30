@@ -1,0 +1,57 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+    <meta name="viewport">
+    <title>Psiu!</title> 
+    <script src="javascript/atividade.js"></script> 
+    <script src="javascript/constantes.js"></script> 
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/estilo.css"> 
+    
+</head> 
+
+<body> 
+    <iframe src="cabecalho.html" frameborder="0" width="100%" height="65" id="cabecalho"></iframe>     
+    <div class="container text-center">
+        <br>
+        <img id='imagem_atividade' alt="Imagem da atividade">
+        <h4 class="text-center lh-sm" id="nome_atividade"></h4>
+    </div>
+    
+    <br>
+    <a type="button" class="btn btn-primary ml-3" id="voltar"><i class="fa fa-arrow-left" aria-hidden="true"></i> Voltar</a>
+    <h4 class="text-center negrito" id="titulo"><b id="titulo_descricao"></b></h4>
+    <h4 class="text-center negrito" id="subtitulo"><b id="subtitulo_descricao"></b></h4>
+    <br>
+
+    <div class="text-center">
+        <h4><b>Data:</b> <span id="data"></span> - <b>Hora:</b> <span id="hora"></span> </h4>
+        <h4><b>Em:</b> <span id="dias"></span>d <span id="horas"></span>h <span id="mins"></span>m <span id="segundos"></span>s</h4>
+    </div>
+
+    <br>
+
+    <div class="text-center">
+        <h4><b>Criado por:</b> <span id="criador"></span> <a class="btn btn-info" type="button" id='criador_href'><i class="fa fa-user-circle" aria-hidden="true"></i></a></h4>
+        <br>
+
+        <br>
+        <h4 id="adicionais_toggle" hidden><b>Observações</b></h4>
+        <p id="adicionais"></p>
+        <br>
+
+        <h4><b>Participantes</b> - <b>Vagas:</b> <span id="vagas"></span></h4>
+
+        <div id="botoes_dinamicos"></div>
+
+    </div>
+
+
+
+</body> 
+</html> 

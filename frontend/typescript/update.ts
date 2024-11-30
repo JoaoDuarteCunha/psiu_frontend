@@ -2,7 +2,7 @@ onload = () => {
     // Carrega os dados do banco de dados 
     // e preenche o formulário 
     const urlParams = new URLSearchParams(window.location.search); 
-    const id = urlParams.get('id'); 
+    const id = urlParams.get('id_atividade'); 
     const idPlace = document.getElementById('id') as HTMLSpanElement 
     if(id) { 
         console.log('id = ', id); 
