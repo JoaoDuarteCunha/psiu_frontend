@@ -4,4 +4,4 @@ const nome_atividade: Record<string, string> = {"carona": "Carona",
                                                 'estudos': 'Grupo de Estudos', 
                                                 'ligas': 'Ligas Acadêmicas', 
                                                 'extracurriculares': 'Atividades Extracurriculares', 
-                                                'conhecer_pessoas': 'Conhecer Pessoas'}; 
+                                                'conhecer_pessoas': 'Conhecer Pessoas'};                        

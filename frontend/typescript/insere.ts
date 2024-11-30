@@ -7,11 +7,16 @@ onload = () => {
         const element = elements[i] as HTMLInputElement; 
         data[element.name] = element.value; 
       } 
-      data['tipo_atividade'] = 'Carona';
+      data['tipo_atividade'] = 'carona';
       data['criador_id'] = '1';
+      const token = localStorage.getItem('token') as string;
+      
       fetch(backendAddress + "psiuApiApp/uma_atividade/", { 
         method: 'POST', body: JSON.stringify(data), 
-        headers: { 'Content-Type': 'application/json' } 
+        headers: {
+          'Authorization': token, 
+          'Content-Type': 'application/json' 
+        } 
       }) 
       .then(response => { 
         if(response.ok) { 
