@@ -16,17 +16,31 @@
 
 <body> 
     <iframe src="cabecalho.html" frameborder="0" width="100%" height="65" id="cabecalho"></iframe> 
-    <h1>Insere Carro</h1> 
+    <div class="container text-center">
+        <br>
+        <img id='imagem_atividade' alt="Imagem da atividade">
+        <h4 class="text-center lh-sm" id="nome_atividade"></h4>
+    </div>
+
     <form id="meuFormulario"> 
-    <table> 
-    <tbody> 
-    <tr><td align="right">adicionais:</td><td><input type="text" name="adicionais" id="adicionais"></td></tr> 
-    <tr><td align="right">data:</td><td><input type="text" name="data" id="data"></td>
-    <tr><td align="right">local_saida:</td><td><input type="text" name="local_saida" id="local_saida"></td>
-    <tr><td align="right">hora:</td><td><input type="text" name="hora" id="hora"></td>
-     </tbody> 
-    </table> 
-    <button id="insere" name="insere" value="Insere">Insere</button> 
+    <div class="container text-center tam-formulario">
+        <div id="campos_dinamicos"></div>
+        <div class="form-group">
+            <label for="inputData">Data da Atividade</label>
+            <input type="date" class="form-control" id="inputData" name="data" placeholder="Data">
+        </div>
+        <div class="form-group">
+            <label for="inputHora">Hora da Atividade</label>
+            <input type="time" class="form-control" id="inputHora" name="hora" placeholder="Hora">
+        </div>
+        <div class="form-group">
+            <label for="inputAdicionais">Informações adicionais</label>
+            <textarea class="form-control" id="inputAdicionais" name="adicionais" rows="3"></textarea>
+        </div>
+        
+        <a type="submit" id="cancelar" class="btn btn-danger ml-3">Cancelar</a> 
+        <button id="insere" name="insere"class="btn btn-success ">Cria Atividade</button>
+        </div>
     </form> 
     <div id="mensagem"></div> 
     </body> 

@@ -5,7 +5,7 @@ function click_logout() {
       fetch(backendAddress + 'accounts/token-auth/', { 
         method: 'DELETE', 
         headers: { 
-          'Authorization': token, 
+          'Authorization': tokenKeyword + token, 
           'Content-Type': 'application/json' 
           } 
       }) 
