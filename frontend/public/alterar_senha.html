@@ -3,43 +3,41 @@
 <head> 
     <meta charset="UTF-8"> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <link rel="stylesheet" href="css/estilo.css"> 
     <script src="javascript/accounts/alterar_senha.js"></script> 
     <script src="javascript/constantes.js"></script> 
-    <title>Document</title> 
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/estilo.css"> 
 </head>
 <body> 
-    <iframe src="cabecalho.html" frameborder="0" width="100%" height="50" id="cabecalho"></iframe> 
-    <h1>Página para trocar senha</h1> 
+    <iframe src="cabecalho.html" frameborder="0" width="100%" height="65" id="cabecalho"></iframe> 
+    <iframe src="greeting_psiu.html" frameborder="0" width="100%" height="180" id="greeting_psiu"></iframe> 
+    <h4 class="text-center lh-sm">Altere sua senha!</h4>
     <form class="formulario" id="formulario"> 
-      <table> 
-        <tr> 
-          <th>Senha antiga:</th> 
-          <td><input type="password" name="old_password" id="old_password" autocomplete="current-password" autofocus required></td> 
-        </tr> 
-        <tr> 
-          <th>Nova senha:</th> 
-          <td> 
-            <input type="password" name="new_password1" id="new_password1" autocomplete="new-password" required><br> 
-            <span class="helptext"> 
-              <ul> 
-                <li>Sua senha não pode ser muito parecida com o resto das suas informações pessoais.</li> 
-                <li>Sua senha precisa conter pelo menos 8 caracteres.</li> 
-                <li>Sua senha não pode ser uma senha comumente utilizada.</li> 
-                <li>Sua senha não pode ser inteiramente numérica.</li> 
-              </ul> 
-            </span> 
-          </td> 
-        </tr> 
-        <tr> 
-            <th>Confirmação da nova senha:</th> 
-            <td><input type="password" name="new_password2" autocomplete="new-password" required id="new_password2"></
-          </tr> 
-          <tr> 
-            <td></td> 
-            <td><input type="submit" value="Troca senha" id="enviar"></td> 
-          </tr> 
-        </table> 
+        <div class="container text-center">
+            <div class="form-group">
+                <label for="old_password">Senha antiga</label>
+                <input type="password" class="form-control" id="old_password" name="old_password">
+            </div>
+            <div class="form-group">
+                <label for="new_password1">Nova senha</label>
+                <input type="password" class="form-control" id="new_password1" name="new_password1">
+                <small id="passwordHelpBlock" class="form-text text-muted">
+                    <ul> 
+                        <li>Sua senha não pode ser muito parecida com o resto das suas informações pessoais.</li> 
+                        <li>Sua senha precisa conter pelo menos 8 caracteres.</li> 
+                        <li>Sua senha não pode ser uma senha comumente utilizada.</li> 
+                        <li>Sua senha não pode ser inteiramente numérica.</li> 
+                    </ul> 
+                </small>
+            </div>
+            <div class="form-group">
+                <label for="new_password2">Confirme sua nova senha</label>
+                <input type="password" class="form-control" id="new_password2" name="new_password2">
+            </div>
+            <button id="enviar" name="enviar" class="btn btn-success">Trocar Senha</button>
+        </div>
+
       </form> 
     </body> 
     </html> 

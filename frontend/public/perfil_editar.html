@@ -4,7 +4,7 @@
     <meta charset="UTF-8"> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <title>Document</title> 
-    <script src="javascript/accounts/login.js"></script> 
+    <script src="javascript/accounts/perfil_editar.js"></script> 
     <script src="javascript/constantes.js"></script> 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/estilo.css"> 
@@ -12,27 +12,27 @@
 <body> 
     <iframe src="cabecalho.html" frameborder="0" width="100%" height="65" id="cabecalho"></iframe>
     <iframe src="greeting_psiu.html" frameborder="0" width="100%" height="180" id="greeting_psiu"></iframe> 
-    <h4 class="text-center lh-sm">Faça login!</h4>
+    <h4 class="text-center lh-sm">Complete seus dados!</h4>
     <br>
-    <form> 
+    <form id="meuFormulario"> 
         <div class="container text-center tam-formulario">
-            <h6 id="msg" class="errorlist"></h6>
+            <h1 id="msg"></h1>
             <div class="form-group">
-                <label for="username">Nome de Usuário</label>
-                <input type="text" class="form-control" id="username" name="username">
+                <label for="first_name">Nome</label>
+                <input type="text" class="form-control" id="first_name" name="first_name">
             </div>
             <div class="form-group">
-                <label for="password">Senha</label>
-                <input type="password" class="form-control" id="password" name="password">
+                <label for="last_name">Sobrenome</label>
+                <input type="text" class="form-control" id="last_name" name="last_name">
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" name="email">
             </div>
             
-            <button id="btnLogin" name="btnLogin" class="btn btn-success">Fazer login</button>    
+            <button id="btnConfirmar" name="btnConfirmar" class="btn btn-success">Confirmar</button>    
         </div>
 
     </form>
-    <div class="container text-center tam-formulario">
-        <br>
-        <a href="passwordReset.html" type="submit" class="btn btn-secondary">Esqueceu a senha?</a>
-    </div>  
 </body> 
 </html> 

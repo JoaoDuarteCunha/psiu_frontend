@@ -28,24 +28,27 @@
         <div class="form-group">
             <label for="inputVagas">Vagas</label>
             <input type="number" class="form-control" id="inputVagas" name="vagas" value="4" min="1">
+            <small id="vagas-erro" class="form-text errorlist"></small>
         </div>
         <div class="form-group">
             <label for="inputData">Data da Atividade</label>
             <input type="date" class="form-control" id="inputData" name="data" placeholder="Data">
+            <small id="data-erro" class="form-text errorlist"></small>
         </div>
         <div class="form-group">
             <label for="inputHora">Hora da Atividade</label>
             <input type="time" class="form-control" id="inputHora" name="hora" placeholder="Hora">
+            <small id="hora-erro" class="form-text errorlist"></small>
         </div>
         <div class="form-group">
             <label for="inputAdicionais">Informações adicionais</label>
             <textarea class="form-control" id="inputAdicionais" name="adicionais" rows="3"></textarea>
+            <small id="adicionais-erro" class="form-text errorlist"></small>
         </div>
         
         <a type="submit" id="cancelar" class="btn btn-danger ml-3">Cancelar</a> 
         <button id="insere" name="insere"class="btn btn-success ">Cria Atividade</button>
         </div>
     </form> 
-    <div id="mensagem"></div> 
     </body> 
 </html> 

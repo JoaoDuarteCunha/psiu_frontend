@@ -22,15 +22,30 @@ onload = () => {
                 return response.json();
             }
             else {
-                msg.innerHTML = 'Temporário erro.';
-                throw new Error('Falha na autenticação');
+                lidarErrosRegistro(response);
             }
         })
             .then((data) => {
             const token = data.token;
             localStorage.setItem('token', token);
-            window.location.replace('index.html');
+            window.location.replace('perfil_editar.html');
         })
             .catch(erro => { console.log(erro); });
     });
 };
+/**
+ * Função que adiciona as mensagens de erro em caso de formulário inválido.
+ *
+ * @param {Response} response Retorno do formulário
+ *
+ */
+async function lidarErrosRegistro(response) {
+    const errorData = await response.json();
+    console.log(errorData);
+    for (let field in errorData) {
+        let errors = errorData[field];
+        for (let error of errors) {
+            document.getElementById(field + '-erro').innerHTML = error;
+        }
+    }
+}

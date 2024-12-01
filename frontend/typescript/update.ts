@@ -78,6 +78,12 @@ onload = () => {
 
 } 
 
+/**
+ * Função que adiciona os campos que dependem de um certo tipo de atividade ao HTML.
+ *
+ * @param {string} tipo_atividade Tipo de atividade
+ *
+ */
 function adicionaCamposDinamicos(tipo_atividade: string) {
     let campos_atividade = campos[tipo_atividade];
   

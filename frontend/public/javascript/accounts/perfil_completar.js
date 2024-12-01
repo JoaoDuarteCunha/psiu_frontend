@@ -1,5 +1,26 @@
 "use strict";
 onload = () => {
+    // Verifica o username e coloca no cabeçalho da página 
+    const token = localStorage.getItem('token');
+    fetch(backendAddress + 'accounts/token-auth/', {
+        method: 'GET',
+        headers: {
+            'Authorization': tokenKeyword + token
+        }
+    })
+        .then(response => {
+        response.json().then(data => {
+            const usuario = data;
+            if (response.ok) { // LOGADO
+            }
+            else {
+                window.location.assign('login.html');
+            }
+        });
+    })
+        .catch(erro => {
+        console.log('[setLoggedUser] deu erro: ' + erro);
+    });
     // Carrega os dados do banco de dados 
     // e preenche o formulário 
     const urlParams = new URLSearchParams(window.location.search);
@@ -8,9 +29,6 @@ onload = () => {
     if (id) {
         console.log('id = ', id);
         idPlace.innerHTML = id;
-        //Botão de cancelar
-        let botao_cancelar = document.getElementById("cancelar");
-        botao_cancelar.setAttribute('href', 'atividade.html?id_atividade=' + id);
         fetch(backendAddress + 'psiuApiApp/uma_atividade/' + id + '/')
             .then(response => response.json())
             .then(resp => {
@@ -68,27 +86,3 @@ onload = () => {
             .catch(erro => { console.log('Deu erro: ' + erro); });
     });
 };
-/**
- * Função que adiciona os campos que dependem de um certo tipo de atividade ao HTML.
- *
- * @param {string} tipo_atividade Tipo de atividade
- *
- */
-function adicionaCamposDinamicos(tipo_atividade) {
-    let campos_atividade = campos[tipo_atividade];
-    let campos_dinamicos = document.getElementById('campos_dinamicos');
-    for (let campo of campos_atividade) {
-        let grupo_campo = document.createElement('div');
-        grupo_campo.className = 'form-group';
-        let label_campo = document.createElement('label');
-        label_campo.setAttribute('for', campo[0]);
-        label_campo.innerHTML = campo[1];
-        grupo_campo.appendChild(label_campo);
-        let formulario_campo = document.createElement('input');
-        formulario_campo.className = 'form-control';
-        formulario_campo.setAttribute('id', campo[0]);
-        formulario_campo.setAttribute('name', campo[0]);
-        grupo_campo.appendChild(formulario_campo);
-        campos_dinamicos.appendChild(grupo_campo);
-    }
-}

@@ -177,6 +177,12 @@ onload = function() {
 
 }
 
+/**
+ * Função que permite que o usuário participe/cancela a participação em uma atividade.
+ *
+ * @param {number} id_atividade Identificador numérico da atividade
+ *
+ */
 function participar_atividade(id_atividade:number) {
     const token = localStorage.getItem('token') as string;
     fetch(backendAddress + 'psiuApiApp/participa_atividade/', { 

@@ -1,4 +1,10 @@
 "use strict";
+/**
+ * Função que exibe a lista de atividades de um certo tipo.
+ *
+ * @param {string} tipo_atividade Identificador do tipo de atividade
+ *
+ */
 function exibeListaDeAtividades(tipo_atividade) {
     fetch(backendAddress + "psiuApiApp/lista/" + tipo_atividade + "/")
         .then(response => response.json())

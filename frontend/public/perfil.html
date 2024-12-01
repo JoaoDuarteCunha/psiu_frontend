@@ -26,31 +26,9 @@
     <div class="ml-3">
         <h4><b>Dados de contato:</b></h4>
         <div class="ml-4">
-            <p><b>Nome:</b> {{ user.first_name }} {{ user.last_name }}<br><b>Email:</b> {{ user.email }}</p>
+            <p><b>Nome:</b> <span id='first_name'></span> <span id="last_name"></span><br><b>Email:</b> <span id="email"></span></p>
         </div>
     </div>
     
-    <br>
-    <br>
-
-    <div class="ml-3">
-        <h4><b>Atividades criadas por <span name="username"></span>:</b></h4>
-        <br>
-        <div class="container text-center">
-            <div class="row justify-content-center">
-                {% for atividade in atividades_criadas %}
-                    <div class="col-auto">
-                        {% include 'psiuApp/cards_personalizados.html' %}
-                    </div>
-                {% empty %}
-                    <h6>Usuário não criou atividades.</h6>
-                {% endfor %}
-            </div>
-        </div>
-    </div>
-    
-    <br>
-    <br>
-
 </body> 
 </html> 

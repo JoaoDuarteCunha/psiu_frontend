@@ -11,4 +11,4 @@ const campos: Record<string, Array<Array<string>>> = {"carona": [['local_chegada
     'estudos': [['materia', 'Disciplina'], ['local', 'Local']], 
     'ligas': [['nome', 'Nome'], ['local', 'Local']], 
     'extracurriculares': [['atividade', 'Atividade'], ['local', 'Local']], 
-    'conhecer_pessoas': [['atividade', 'Atividade'], ['local', 'Local']]};                       
+    'conhecer_pessoas': [['atividade', 'Atividade'], ['local', 'Local']]};

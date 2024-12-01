@@ -22,8 +22,6 @@ onload = () => {
         for (let i = 0; i < elements.length; i++) {
             const element = elements[i];
             data[element.name] = element.value;
-            console.log(element.name);
-            console.log(element.value);
         }
         data['tipo_atividade'] = tipo_atividade;
         const token = localStorage.getItem('token');
@@ -39,12 +37,33 @@ onload = () => {
                 window.location.assign('lista.html?tipo_atividade=' + tipo_atividade);
             }
             else {
-                document.getElementById('mensagem').innerHTML = 'Dados inseridos com erro';
+                lidarErrosInsere(response);
             }
         })
             .catch(error => { console.log(error); });
     });
 };
+/**
+ * Função que adiciona as mensagens de erro em caso de formulário inválido.
+ *
+ * @param {Response} response Retorno do formulário
+ *
+ */
+async function lidarErrosInsere(response) {
+    const errorData = await response.json();
+    for (let field in errorData) {
+        let errors = errorData[field];
+        for (let error of errors) {
+            document.getElementById(field + '-erro').innerHTML = error;
+        }
+    }
+}
+/**
+ * Função que adiciona os campos que dependem de um certo tipo de atividade ao HTML.
+ *
+ * @param {string} tipo_atividade Tipo de atividade
+ *
+ */
 function adicionaCamposDinamicos_insere(tipo_atividade) {
     let campos_atividade = campos[tipo_atividade];
     let campos_dinamicos = document.getElementById('campos_dinamicos');
@@ -60,6 +79,10 @@ function adicionaCamposDinamicos_insere(tipo_atividade) {
         formulario_campo.setAttribute('id', 'input' + campo[0]);
         formulario_campo.setAttribute('name', campo[0]);
         grupo_campo.appendChild(formulario_campo);
+        let erro_campo = document.createElement('small');
+        erro_campo.className = 'form-text errorlist';
+        erro_campo.setAttribute('id', campo[0] + '-erro');
+        grupo_campo.appendChild(erro_campo);
         campos_dinamicos.appendChild(grupo_campo);
     }
 }
