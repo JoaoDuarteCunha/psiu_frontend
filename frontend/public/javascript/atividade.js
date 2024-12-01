@@ -59,11 +59,28 @@ onload = function () {
         let vagas = document.getElementById('vagas');
         vagas.innerHTML = atividade['vagas'];
         //Participantes
+        let area_participantes = document.getElementById('area_participantes');
         let nomes_participantes = [];
         if (participantes.length > 0) {
             for (let participante of participantes) {
                 nomes_participantes.push(participante['usuario']);
+                let nome_usuario = document.createTextNode(' ' + participante['usuario'] + ' ');
+                area_participantes.appendChild(nome_usuario);
+                let editar_atividade = document.createElement('a');
+                editar_atividade.setAttribute('type', 'button');
+                editar_atividade.className = 'btn btn-info';
+                editar_atividade.setAttribute('href', 'perfil.html?usuario=' + participante['usuario']);
+                let icone_usuario = document.createElement('i');
+                icone_usuario.className = 'fa fa-user-circle';
+                icone_usuario.setAttribute('aria-hidden', 'true');
+                editar_atividade.appendChild(icone_usuario);
+                area_participantes.appendChild(editar_atividade);
             }
+        }
+        else {
+            let nao_ha_participantes = document.createElement('h6');
+            nao_ha_participantes.innerHTML = 'Ainda não há participantes cadastrados nessa atividade';
+            area_participantes.appendChild(nao_ha_participantes);
         }
         // Verifica se o usuário está logado
         const token = localStorage.getItem('token');
@@ -88,16 +105,14 @@ onload = function () {
                         let remove_atividade = document.createElement('a');
                         remove_atividade.setAttribute('type', 'button');
                         remove_atividade.className = 'btn btn-danger ml-3';
-                        remove_atividade.setAttribute('href', 'remover.html?id_atividade=' + id_atividade);
+                        remove_atividade.setAttribute('href', 'remove.html?id_atividade=' + id_atividade);
                         remove_atividade.innerHTML = 'Remover atividade';
                         botoes_dinamicos.appendChild(espaco);
                         botoes_dinamicos.appendChild(editar_atividade);
                         botoes_dinamicos.appendChild(remove_atividade);
                     }
                     else { // USUARIO NÃO É O CRIADOR DA ATIVIDADE
-                        console.log("NAO SOU O CRIADOR");
                         if (nomes_participantes.includes(usuario)) { //Se o usuário já participa da atividade
-                            console.log('Já participo');
                             let cancelar_participar = document.createElement('a');
                             cancelar_participar.setAttribute('type', 'button');
                             cancelar_participar.className = 'btn btn-danger ml-3';

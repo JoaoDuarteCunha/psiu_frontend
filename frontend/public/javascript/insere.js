@@ -10,7 +10,7 @@ onload = () => {
     const nome_tipo_atividade = document.getElementById('nome_atividade');
     nome_tipo_atividade.innerText = nome_atividade[tipo_atividade];
     //Adiciona os campos específicos para cada tipo de atividade
-    adicionaCamposDinamicos(tipo_atividade);
+    adicionaCamposDinamicos_insere(tipo_atividade);
     //Botão de cancelar
     let botao_cancelar = document.getElementById("cancelar");
     botao_cancelar.setAttribute('href', 'lista.html?tipo_atividade=' + tipo_atividade);
@@ -45,7 +45,7 @@ onload = () => {
             .catch(error => { console.log(error); });
     });
 };
-function adicionaCamposDinamicos(tipo_atividade) {
+function adicionaCamposDinamicos_insere(tipo_atividade) {
     let campos_atividade = campos[tipo_atividade];
     let campos_dinamicos = document.getElementById('campos_dinamicos');
     for (let campo of campos_atividade) {

@@ -12,7 +12,7 @@ onload = () => {
     nome_tipo_atividade.innerText = nome_atividade[tipo_atividade]; 
 
     //Adiciona os campos específicos para cada tipo de atividade
-    adicionaCamposDinamicos(tipo_atividade);
+    adicionaCamposDinamicos_insere(tipo_atividade);
 
     //Botão de cancelar
     let botao_cancelar = document.getElementById("cancelar") as HTMLElement;
@@ -52,7 +52,7 @@ onload = () => {
     }); 
   } 
 
-function adicionaCamposDinamicos(tipo_atividade: string) {
+function adicionaCamposDinamicos_insere(tipo_atividade: string) {
   let campos_atividade = campos[tipo_atividade];
 
   let campos_dinamicos = (document.getElementById('campos_dinamicos') as HTMLDivElement);

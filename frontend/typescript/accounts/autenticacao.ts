@@ -18,7 +18,7 @@ window.addEventListener('load', () => {
                 
                 let perfil = document.createElement('a')
                 perfil.className = 'nav-link'
-                perfil.setAttribute('href', 'index.html')
+                perfil.setAttribute('href', 'perfil.html?usuario=' + data.username)
                 perfil.setAttribute('target', '_top')
                 
                 let icon_perfil = document.createElement('i')
