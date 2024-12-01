@@ -1,7 +1,7 @@
 # Psiu
 
 João Pedro Duarte da Cunha - 2212840<br>
-Link Site: http://18.214.253.160/
+Link Site: https://hub.docker.com/layers/joaopdcunha/psiu-frontend/latest/images/sha256:d0b157e0e4b15b381541fff849d15732441d330da200998f23ffb540a966836e
 
 ## O site
 
@@ -50,8 +50,7 @@ Além disso, os outros usuários podem visualizar o perfil dos usuários do site
 
 ## Funcionamento do Site
 
-1. Se conectar a http://18.214.253.160/
-2. Usar a barra superior para Registrar-se no site
+1. Usar a barra superior para Registrar-se no site
 3. Preencher as informações adicionais
 4. Selecionar um dos tipos de eventos
 5. Criar uma Atividade
