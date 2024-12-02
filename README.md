@@ -46,11 +46,12 @@ Existem diversas operações relacionadas à usuários implementadas:
 - Alteração de senha
 - Recuperação de senha
 
-Além disso, os outros usuários podem visualizar o perfil dos usuários do site e ver em quais eventos um usuário está participando ou quais eventos um usuário criou.
+Além disso, os outros usuários podem visualizar o perfil dos usuários do site.
 
 ## Funcionamento do Site
 
-1. Usar a barra superior para Registrar-se no site
+1. docker run joaopdcunha/psiu-frontend
+2. Usar a barra superior para Registrar-se no site
 3. Preencher as informações adicionais
 4. Selecionar um dos tipos de eventos
 5. Criar uma Atividade
@@ -60,4 +61,11 @@ Além disso, os outros usuários podem visualizar o perfil dos usuários do site
 
 ## Testagem
 
-Quanto ao funcionamento do site, o site foi publicado usando o AWS e acredito que todas as funcionalidades mencionadas acima estão funcionando como esperado sendo que não encontrei aspectos não funcionais. A recuperação de senha foi implementada utilizando o painel do terminal para envio do email como o Gmail tem proteção para envios automatizados.
+Quanto ao funcionamento do site, o site foi publicado no Docker e acredito que todas as funcionalidades mencionadas acima estão funcionando como esperado sendo que não encontrei aspectos não funcionais. A recuperação de senha foi implementada utilizando o painel do terminal para envio do email como o Gmail tem proteção para envios automatizados.
+
+## Imagens
+
+![image](https://github.com/user-attachments/assets/08cf1152-9e8a-435d-bb69-e57c24648e37)
+![image](https://github.com/user-attachments/assets/c50e6cac-61de-4796-a384-1dddb754771a)
+![image](https://github.com/user-attachments/assets/0f078fe5-aecf-41ae-b15c-b7af3cac9484)
+
